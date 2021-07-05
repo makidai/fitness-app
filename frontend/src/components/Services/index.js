@@ -19,18 +19,18 @@ const Services = () => {
             <ServicesWrapper>
                 <ServicesCard>
                     <ServicesIcon src={Icon1} />
-                    <ServicesH2>Health</ServicesH2>
-                    <ServicesP>We help for your health.</ServicesP>
+                    <ServicesH2>栄養管理</ServicesH2>
+                    <ServicesP>身体づくりに必要な栄養管理のサポート</ServicesP>
                 </ServicesCard>
                 <ServicesCard>
                     <ServicesIcon src={Icon2} />
-                    <ServicesH2>Fitness</ServicesH2>
-                    <ServicesP>We help for your health.</ServicesP>
+                    <ServicesH2>筋トレ</ServicesH2>
+                    <ServicesP>効果的な筋トレをサポート</ServicesP>
                 </ServicesCard>
                 <ServicesCard>
                     <ServicesIcon src={Icon3} />
-                    <ServicesH2>Analyze</ServicesH2>
-                    <ServicesP>We help for your health.</ServicesP>
+                    <ServicesH2>その他サポート</ServicesH2>
+                    <ServicesP>その他、便利な機能や情報の提供</ServicesP>
                 </ServicesCard>
             </ServicesWrapper>
         </ServicesContainer>

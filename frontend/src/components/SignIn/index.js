@@ -20,13 +20,13 @@ const SignIn = () => {
                     <Icon to="/">Papurica</Icon>
                     <FormContent>
                         <Form action="#">
-                            <FormH1>Sign in to your account</FormH1>
-                            <FormLabel htmlFor="for">Email</FormLabel>
+                            <FormH1>ログイン</FormH1>
+                            <FormLabel htmlFor="for">メールアドレス</FormLabel>
                             <FormInput tyle="email" required />
-                            <FormLabel htmlFor="for">Password</FormLabel>
+                            <FormLabel htmlFor="for">パスワード</FormLabel>
                             <FormInput type="password" required />
-                            <FormButton type="submit">Continue</FormButton>
-                            <Text>Forgot password</Text>
+                            <FormButton type="submit">ログイン</FormButton>
+                            <Text>パスワードを忘れた場合</Text>
                         </Form>
                     </FormContent>
                 </FormWrap>

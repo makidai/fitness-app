@@ -54,7 +54,7 @@ const Navbar = ({ toggle }) => {
                                     exact="true"
                                     offset={-80}
                                 >
-                                    About
+                                    Papuricaとは
                                 </NavLinks>
                             </NavItem>
                             <NavItem>
@@ -66,7 +66,7 @@ const Navbar = ({ toggle }) => {
                                     exact="true"
                                     offset={-80}
                                 >
-                                    Discover
+                                    筋トレ
                                 </NavLinks>
                             </NavItem>
                             <NavItem>
@@ -78,7 +78,7 @@ const Navbar = ({ toggle }) => {
                                     exact="true"
                                     offset={-80}
                                 >
-                                    Services
+                                    サービス
                                 </NavLinks>
                             </NavItem>
                             <NavItem>
@@ -90,7 +90,7 @@ const Navbar = ({ toggle }) => {
                                     exact="true"
                                     offset={-80}
                                 >
-                                    Sign Up
+                                    新規登録
                                 </NavLinks>
                             </NavItem>
                         </NavMenu>

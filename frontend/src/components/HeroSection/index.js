@@ -28,7 +28,7 @@ const HeroSection = () => {
             <HeroContent>
                 <HeroH1>Health and Fitness</HeroH1>
                 <HeroP>
-                    Sign up a new account today and get a healthy life!
+                    Papuricaで磨かれた身体を手に入れる
                 </HeroP>
                 <HeroBtnWrapper>
                     <Button
@@ -42,7 +42,7 @@ const HeroSection = () => {
                         exact="true"
                         offset={-80}
                     >
-                        Get started {hover ? <ArrowForward /> : <ArrowRight />}
+                        今すぐはじめる {hover ? <ArrowForward /> : <ArrowRight />}
                     </Button>
                 </HeroBtnWrapper>
             </HeroContent>

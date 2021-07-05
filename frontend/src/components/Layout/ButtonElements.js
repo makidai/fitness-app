@@ -18,6 +18,6 @@ export const Button = styled(Link)`
 
     &:hover {
         transition: all 0.2s ease-in-out;
-        background: #fff;
+        background: linear-gradient(45deg, #F38A15, #D2215D); 
     }
 `;
