@@ -10,11 +10,7 @@ export const Container = styled.div`
     top: 0;
     z-index: 0;
     overflow: hidden;
-    background: linear-gradient(
-        108deg,
-        rgba(1, 147, 86, 1) 0%,
-        rgba(10, 201, 122, 1) 100%
-    );
+    background: #111111;
 `;
 
 export const FormWrap = styled.div`
@@ -32,7 +28,7 @@ export const Icon = styled(Link)`
     margin-left: 32px;
     margin-top: 32px;
     text-decoration: none;
-    color: #fff;
+    color: #F75028;
     font-weight: 700;
     font-size: 32px;
 
@@ -54,7 +50,7 @@ export const FormContent = styled.div`
 `;
 
 export const Form = styled.form`
-    background: #010101;
+    background: #262626;
     max-width: 400px;
     height: auto;
     width: 100%;
@@ -92,7 +88,7 @@ export const FormInput = styled.input`
 `;
 
 export const FormButton = styled.button`
-    background: #01bf71;
+    background: linear-gradient(45deg, #F38A15, #D2215D);
     padding: 16px 0;
     border: none;
     border-radius: 4px;

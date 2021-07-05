@@ -35,7 +35,6 @@ const HeroSection = () => {
                         to="signup"
                         onMouseEnter={onHover}
                         onMouseLeave={onHover}
-                        primary="true"
                         dark="true"
                         smooth={true}
                         duration={500}
