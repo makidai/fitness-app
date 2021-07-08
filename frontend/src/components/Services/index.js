@@ -1,7 +1,7 @@
 import React from "react";
 import Icon1 from '../../images/svg-1.svg'
 import Icon2 from '../../images/svg-2.svg'
-import Icon3 from '../../images/svg-3.svg'
+import Icon5 from '../../images/svg-5.svg'
 import {
     ServicesContainer,
     ServicesH1,
@@ -20,17 +20,17 @@ const Services = () => {
                 <ServicesCard>
                     <ServicesIcon src={Icon1} />
                     <ServicesH2>栄養管理</ServicesH2>
-                    <ServicesP>身体づくりに必要な栄養管理のサポート</ServicesP>
+                    <ServicesP>身体づくりに必要な栄養管理をサポート</ServicesP>
                 </ServicesCard>
                 <ServicesCard>
                     <ServicesIcon src={Icon2} />
                     <ServicesH2>筋トレ</ServicesH2>
-                    <ServicesP>効果的な筋トレをサポート</ServicesP>
+                    <ServicesP>効果的な筋トレとモチベーション維持をサポート</ServicesP>
                 </ServicesCard>
                 <ServicesCard>
-                    <ServicesIcon src={Icon3} />
-                    <ServicesH2>その他サポート</ServicesH2>
-                    <ServicesP>その他、便利な機能や情報の提供</ServicesP>
+                    <ServicesIcon src={Icon5} />
+                    <ServicesH2>ライフスタイル</ServicesH2>
+                    <ServicesP>美容やファッションなどライフスタイルをサポート</ServicesP>
                 </ServicesCard>
             </ServicesWrapper>
         </ServicesContainer>

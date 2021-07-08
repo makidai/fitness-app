@@ -39,7 +39,7 @@ export const homeObjThree = {
     lightTextDesc: false,
     topLine: "会員になると",
     headline: "管理画面の使用が可能",
-    description: "1日に摂取した栄養素の記録や、不足した栄養素のレコメンド機能など、便利な機能を使用可能になります。",
+    description: "1日に摂取した栄養素の記録や、不足した栄養素のレコメンド機能など、便利な機能が使用可能になります。",
     buttonLabel: "新規登録",
     imgStart: false,
     img: require("../../images/svg-1.svg").default,
