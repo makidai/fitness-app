@@ -20,7 +20,7 @@ class CreateUser(graphene.Mutation):
 		user = get_user_model()(username=username)
 		user.set_password(password)
 		user.save()
-		return user
+		return CreateUser(user=user)
 
 
 class UserQueries(graphene.ObjectType):
