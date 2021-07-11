@@ -9,5 +9,23 @@ class UserType(DjangoObjectType):
         model = get_user_model()
 
 
+class CreateUser(graphene.Mutation):
+	user = graphene.Field(UserType)
+
+	class Arguments:
+		username = graphene.String(required=True)
+		password = graphene.String(required=True)
+
+	def mutate(self, info, username, password):
+		user = get_user_model()(username=username)
+		user.set_password(password)
+		user.save()
+		return user
+
+
 class UserQueries(graphene.ObjectType):
 	user = graphene.Field(UserType)
+
+
+class UserMutations(graphene.ObjectType):
+	create_user = CreateUser.Field()
