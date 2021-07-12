@@ -1,5 +1,4 @@
 import "./App.css";
-import { gql, useQuery } from "@apollo/client";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Home from "./pages";
 import SigninPage from "./pages/signin";
