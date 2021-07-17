@@ -4,9 +4,13 @@ from account.schema import (
 	UserQueries,
 	UserMutations
 )
+from blog.schema import (
+	BlogQueries,
+)
 
 class Query(
 	UserQueries,
+	BlogQueries,
 	graphene.ObjectType):
 	pass
 
