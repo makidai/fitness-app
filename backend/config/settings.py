@@ -49,12 +49,12 @@ INSTALLED_APPS = [
 GRAPHENE = {
     'SCHEMA': 'config.schema.schema',
     'MIDDLEWARE': [
-        'graphql_jwt.middleware.JSONWebTokenMiddleware',
+        # 'graphql_jwt.middleware.JSONWebTokenMiddleware',
     ],
 }
 
 AUTHENTICATION_BACKENDS = [
-    'graphql_jwt.backends.JSONWebTokenBackend',
+    # 'graphql_jwt.backends.JSONWebTokenBackend',
     'django.contrib.auth.backends.ModelBackend',
 ]
 
