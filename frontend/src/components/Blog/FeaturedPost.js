@@ -38,7 +38,7 @@ export default function FeaturedPost(props) {
                                 variant="subtitle1"
                                 color="textSecondary"
                             >
-                                {post.date}
+                                {post.updatedAt}
                             </Typography>
                             <Typography variant="subtitle1" paragraph>
                                 {post.description}
@@ -52,7 +52,7 @@ export default function FeaturedPost(props) {
                         <CardMedia
                             className={classes.cardMedia}
                             image={post.image}
-                            title={post.imageTitle}
+                            title={post.imageText}
                         />
                     </Hidden>
                 </Card>

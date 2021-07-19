@@ -1,4 +1,6 @@
 import React from "react";
+import gql from "graphql-tag";
+import { useQuery } from "@apollo/client";
 import { makeStyles } from "@material-ui/core/styles";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Grid from "@material-ui/core/Grid";
@@ -15,6 +17,29 @@ import Footer from "./Footer";
 import post1 from "./blog-post.1.md";
 import post2 from "./blog-post.2.md";
 import post3 from "./blog-post.3.md";
+
+const POST_QUERY = gql`
+    {
+        posts {
+            category {
+                name
+                slug
+            }
+            tags {
+                name
+                slug
+            }
+            title
+            content
+            description
+            image
+            isPublished
+            isFeatured
+            imageText
+            updatedAt
+        }
+    }
+`;
 
 const useStyles = makeStyles((theme) => ({
     mainGrid: {
@@ -91,6 +116,9 @@ const sidebar = {
 
 export default function Blog() {
     const classes = useStyles();
+    const { data, loading, error } = useQuery(POST_QUERY);
+    if (loading) return <h1>loading...</h1>;
+    if (error) return <h1>error...</h1>;
 
     return (
         <React.Fragment>
@@ -100,7 +128,7 @@ export default function Blog() {
                 <main>
                     <MainFeaturedPost post={mainFeaturedPost} />
                     <Grid container spacing={4}>
-                        {featuredPosts.map((post) => (
+                        {data.posts.map((post) => (
                             <FeaturedPost key={post.title} post={post} />
                         ))}
                     </Grid>
