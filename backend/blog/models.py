@@ -38,7 +38,7 @@ class Post(models.Model):
 		ordering = ['-created_at']
 
 	def save(self, *args, **kwargs):
-		if self.is_public and not self.published_at:
+		if self.is_published and not self.published_at:
 			self.published_at = timezone.now()
 		super().save(*args, **kwargs)
 
