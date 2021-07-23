@@ -1,6 +1,7 @@
 import graphene
 import graphene_django_optimizer as gql_optimizer
 from graphene_django import DjangoObjectType
+from datetime import datetime
 from .models import Post, Category, Tag, Collection
 
 
@@ -11,6 +12,7 @@ class CollectionType(DjangoObjectType):
 
 class PostType(DjangoObjectType):
 	collections = graphene.List(CollectionType, required=True)
+	date = graphene.String(required=True)
 	class Meta:
 		model = Post
 		fields = [
@@ -21,11 +23,13 @@ class PostType(DjangoObjectType):
 		'content',
 		'description',
 		'image',
-		'published_at',
-		'is_published']
+		]
 
 	def resolve_collections(self, _info, **kwargs):
 		return [collection for collection in self.collections.all()]
+
+	def resolve_date(self, _info, **kwargs):
+		return self.updated_at.strftime('%Y-%m-%d')
 
 
 class CategoryType(DjangoObjectType):

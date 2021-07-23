@@ -33,9 +33,7 @@ const POST_QUERY = gql`
             content
             description
             image
-            isPublished
-            imageText
-            updatedAt
+            date
         }
     }
 `;
