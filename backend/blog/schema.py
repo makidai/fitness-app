@@ -1,12 +1,31 @@
 import graphene
 import graphene_django_optimizer as gql_optimizer
 from graphene_django import DjangoObjectType
-from .models import Post, Category, Tag
+from .models import Post, Category, Tag, Collection
+
+
+class CollectionType(DjangoObjectType):
+	class Meta:
+		model = Collection
 
 
 class PostType(DjangoObjectType):
+	collections = graphene.List(CollectionType, required=True)
 	class Meta:
 		model = Post
+		fields = [
+		'id',
+		'category',
+		'tags',
+		'title',
+		'content',
+		'description',
+		'image',
+		'published_at',
+		'is_published']
+
+	def resolve_collections(self, _info, **kwargs):
+		return [collection for collection in self.collections.all()]
 
 
 class CategoryType(DjangoObjectType):
@@ -19,10 +38,13 @@ class TagType(DjangoObjectType):
 		model = Tag
 
 
+
+
 class BlogQueries(graphene.ObjectType):
 	posts = graphene.List(PostType)
 	categories = graphene.List(CategoryType)
 	tags = graphene.List(TagType)
+	collections = graphene.List(CollectionType)
 
 	def resolve_posts(self, info, **kwargs):
 		qs = Post.objects.all()
@@ -34,4 +56,8 @@ class BlogQueries(graphene.ObjectType):
 
 	def resolve_tags(self, info, **kwargs):
 		qs = Tag.objects.all()
+		return gql_optimizer.query(qs, info)
+
+	def resolve_collections(self, info, **kwargs):
+		qs = Collection.objects.all()
 		return gql_optimizer.query(qs, info)
