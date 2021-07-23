@@ -34,7 +34,6 @@ const POST_QUERY = gql`
             description
             image
             isPublished
-            isFeatured
             imageText
             updatedAt
         }

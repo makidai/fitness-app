@@ -50,6 +50,7 @@ class Command(BaseCommand):
 		Post.objects.all().delete()
 		Category.objects.all().delete()
 		Tag.objects.all().delete()
+		Collection.objects.all().delete()
 
 		for category in [
 			{"name": "筋トレ", "slug": "work_out"},
@@ -85,7 +86,6 @@ class Command(BaseCommand):
 			"image": "https://source.unsplash.com/random",
 			"image_text": "work_out",
 			"is_published": True,
-			"is_featured": True
 			},
 			{"category": Category.objects.get(slug="work_out"),
 			"tags": Tag.objects.filter(slug__contains="training"),
@@ -94,7 +94,6 @@ class Command(BaseCommand):
 			"image": "https://source.unsplash.com/random",
 			"image_text": "work_out",
 			"is_published": True,
-			"is_featured": True
 			},
 			{"category": Category.objects.get(slug="nutrition"),
 			"tags": Tag.objects.exclude(slug__contains="training"),
@@ -103,7 +102,6 @@ class Command(BaseCommand):
 			"image": "https://source.unsplash.com/random",
 			"image_text": "nutrition",
 			"is_published": True,
-			"is_featured": True
 			},
 			{"category": Category.objects.get(slug="nutrition"),
 			"tags": Tag.objects.exclude(slug__contains="training"),
@@ -112,7 +110,6 @@ class Command(BaseCommand):
 			"image": "https://source.unsplash.com/random",
 			"image_text": "nutrition",
 			"is_published": True,
-			"is_featured": True
 			},
 		]:
 			Post.objects.create(
@@ -122,5 +119,14 @@ class Command(BaseCommand):
 				image=post["image"],
 				image_text=post["image_text"],
 				is_published=post["is_published"],
-				is_featured=post["is_featured"]
 			)
+			
+		for collection in [
+			{"name": "メイン", "slug": "main"},
+			{"name": "特集", "slug": "features"},
+		]:
+			Collection.objects.create(
+				name=collection["name"],
+				slug=collection["slug"],
+			)
+

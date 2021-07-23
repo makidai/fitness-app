@@ -32,7 +32,6 @@ class Post(models.Model):
 	updated_at = models.DateTimeField(auto_now=True)
 	published_at = models.DateTimeField(blank=True, null=True)
 	is_published = models.BooleanField(default=False)
-	is_featured = models.BooleanField(default=False)
 
 	class Meta:
 		ordering = ['-created_at']
@@ -44,3 +43,33 @@ class Post(models.Model):
 
 	def __str__(self):
 		return self.title
+
+
+class CollectionPost(models.Model):
+	collection = models.ForeignKey(
+		"Collection", related_name="collectionpost", on_delete=models.CASCADE
+	)
+	post = models.ForeignKey(
+		Post, related_name="collectionpost", on_delete=models.CASCADE
+	)
+
+	class Meta:
+		unique_together = (("collection", "post"),)
+
+	def __str__(self):
+		return f"[{self.collection}] {self.post}"
+
+
+class Collection(models.Model):
+	name = models.CharField(max_length=255, unique=True)
+	slug = models.SlugField(max_length=255)
+	posts = models.ManyToManyField(
+		Post,
+		blank=True,
+		related_name="collections",
+		through=CollectionPost,
+		through_fields=["collection", "post"],
+	)
+
+	def __str__(self):
+		return self.name
