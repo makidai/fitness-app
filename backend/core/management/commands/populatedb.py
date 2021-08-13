@@ -123,7 +123,7 @@ class Command(BaseCommand):
 			
 		for collection in [
 			{"name": "メイン", "slug": "main"},
-			{"name": "特集", "slug": "features"},
+			{"name": "特集", "slug": "featured"},
 		]:
 			Collection.objects.create(
 				name=collection["name"],
